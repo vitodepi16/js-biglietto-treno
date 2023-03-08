@@ -17,24 +17,28 @@ let totalPrice = (travelKm * priceKm);
 const discountYoung = ((totalPrice) * 0.20);
 const discountOld =  ((totalPrice) * 0.40);
 
+    
+document.getElementById('priceticket').innerHTML = `
+<h1>Il Prezzo del tuo biglietto é:  ${totalPrice}&euro; </h1>
+`;
 
-if(isNaN(ageUser , travelKm)){
+if(isNaN(ageUser), isNaN(travelKm)){
     document.getElementById('priceticket').innerHTML = `
     <h1>Inserisci correttamente i tuoi dati</h1>
-    `
+    `;
 
 }
 
-if (ageUser < 18){
+    else  if (ageUser < 18){
     totalPrice = discountYoung, 
     document.getElementById('discountTicket').innerHTML = `
-    <h2>Il Prezzo del tuo biglietto scontato é: ${totalPrice}&euro; </h2>
+    <h2>Lo sconto del biglietto é: ${totalPrice}&euro; </h2>
     `;
 }
     else if(ageUser > 64){
         totalPrice = discountOld,
         document.getElementById('discountTicket').innerHTML = `
-        <h2>Il Prezzo del tuo biglietto scontato é: ${totalPrice}&euro; </h2>
+        <h2>Lo sconto del biglietto é: ${totalPrice}&euro; </h2>
         `;
     } 
     else {
@@ -42,4 +46,3 @@ if (ageUser < 18){
 <h1>Il Prezzo del tuo biglietto é:  ${totalPrice}&euro; </h1>
 `;
     }
-    
